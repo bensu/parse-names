@@ -4,7 +4,7 @@
 
 (def parser (HumanNameParser.))
 
-(defn parse [s]
+(defn parse-names [s]
   (let [name-obj (.parse parser s)]
     (->> {:first-name (.getFirstName name-obj)
           :last-name (.getLastName name-obj)
@@ -14,5 +14,3 @@
           :middle-name (.getMiddleName name-obj)}
          (filter (fn [[k v]] (not (empty? v))))
          (into {}))))
-
-(def name "Sebastian Bensusan")
