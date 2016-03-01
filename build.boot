@@ -4,7 +4,8 @@
 (set-env! :resource-paths #{"resources" "src"}
           :source-paths   #{"test"}
           :dependencies   '[[org.clojure/clojure "RELEASE"]
-                            [adzerk/boot-test "RELEASE" :scope "test"]])
+                            [adzerk/boot-test "RELEASE" :scope "test"]
+                            [org.apache.commons/commons-text "0.1-SNAPSHOT-BENSU-0"]])
 
 (task-options!
  pom {:project     project
