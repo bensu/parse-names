@@ -16,7 +16,7 @@ Very thin Clojure wrapper around
 
 (parse-name "James C. ('Jimmy') O'Dell, Jr.")
 ;; => {:first-name "James", :last-name "O'Dell",
-       :nick-name "Jimmy", :suffix "Jr.", :middle-name "C."}
+;;     :nick-name "Jimmy", :suffix "Jr.", :middle-name "C."}
 
 ```
 ## License
