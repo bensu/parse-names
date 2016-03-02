@@ -4,7 +4,7 @@
 
 (def parser (HumanNameParser.))
 
-(defn parse-names [s]
+(defn parse-name [s]
   (let [name-obj (.parse parser s)]
     (->> {:first-name (.getFirstName name-obj)
           :last-name (.getLastName name-obj)

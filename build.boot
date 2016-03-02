@@ -5,7 +5,7 @@
           :source-paths   #{"test"}
           :dependencies   '[[org.clojure/clojure "RELEASE"]
                             [adzerk/boot-test "RELEASE" :scope "test"]
-                            [org.apache.commons/commons-text "0.1-SNAPSHOT-BENSU-0"]])
+                            [org.clojars.bensu/commons-text "0.1-SNAPSHOT-0"]])
 
 (task-options!
  pom {:project     project
