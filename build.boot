@@ -5,6 +5,7 @@
           :source-paths   #{"test"}
           :dependencies   '[[org.clojure/clojure "RELEASE"]
                             [adzerk/boot-test "RELEASE" :scope "test"]
+                            [adzerk/bootlaces "0.1.13" :scope "test"]
                             [org.clojars.bensu/commons-text "0.1-SNAPSHOT-0"]])
 
 (task-options!
@@ -22,3 +23,6 @@
   (comp (pom) (jar) (install)))
 
 (require '[adzerk.boot-test :refer [test]])
+(require '[adzerk.bootlaces :refer :all])
+
+(bootlaces! version)
