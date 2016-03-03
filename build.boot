@@ -1,8 +1,7 @@
 (def project 'parse-names)
-(def version "0.1.0-SNAPSHOT")
+(def version "0.1.1-SNAPSHOT")
 
 (set-env! :resource-paths #{"resources" "src"}
-
           :source-paths   #{"test"}
           :dependencies   '[[org.clojure/clojure "1.7.0"]
                             [org.clojure/clojurescript "1.7.228"]
