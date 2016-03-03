@@ -2,11 +2,12 @@
 (def version "0.1.0-SNAPSHOT")
 
 (set-env! :resource-paths #{"resources" "src"}
+
           :source-paths   #{"test"}
-          :dependencies   '[[org.clojure/clojure "RELEASE"]
-                            [adzerk/boot-test "RELEASE" :scope "test"]
-                            [adzerk/bootlaces "0.1.13" :scope "test"]
-                            [org.clojars.bensu/commons-text "0.1-SNAPSHOT-0"]])
+          :dependencies   '[[org.clojure/clojure "1.7.0"]
+                            [org.clojure/clojurescript "1.7.228"]
+                            [org.clojars.bensu/commons-text "0.1-SNAPSHOT-0"]
+                            [adzerk/bootlaces "0.1.13" :scope "test"]])
 
 (task-options!
  pom {:project     project
@@ -22,7 +23,12 @@
   []
   (comp (pom) (jar) (install)))
 
-(require '[adzerk.boot-test :refer [test]])
-(require '[adzerk.bootlaces :refer :all])
+(require '[adzerk.bootlaces :refer :all]
+         '[cljs.repl.node :as node])
 
 (bootlaces! version)
+
+(comment
+  (deftask node-repl []
+    (cljs.repl/repl (node/repl-env :debug-port 5002))
+    ))
