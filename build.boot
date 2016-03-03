@@ -11,9 +11,9 @@
 (task-options!
  pom {:project     project
       :version     version
-      :description "FIXME: write description"
-      :url         "http://example/FIXME"
-      :scm         {:url "https://github.com/yourname/parse-names"}
+      :description ""
+      :url         "http://github.com/bensu/parse-names"
+      :scm         {:url "https://github.com/bensu/parse-names"}
       :license     {"Eclipse Public License"
                     "http://www.eclipse.org/legal/epl-v10.html"}})
 
