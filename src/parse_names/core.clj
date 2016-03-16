@@ -37,3 +37,13 @@
 
 (def all-names
   (into (sorted-set) (edn/read-string (slurp (io/resource "all-names.edn")))))
+
+(defn extract-names [text]
+  (let [matches (re-seq name-regex text)]
+    (reduce (fn [acc match]
+              (let [[fn ln] (str/split match #" ")]
+                (if (contains? all-names (str/lower-case fn))
+                  (conj acc [fn ln])
+                  acc)))
+            []
+            matches)))
