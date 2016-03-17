@@ -6,6 +6,7 @@
           :dependencies   '[[org.clojure/clojure "1.7.0"]
                             [org.clojure/clojurescript "1.7.228"]
                             [org.clojars.bensu/commons-text "0.1-SNAPSHOT-0"]
+                            [org.clojure/data.json "0.2.6"]
                             [adzerk/bootlaces "0.1.13" :scope "test"]])
 
 (task-options!

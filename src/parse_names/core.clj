@@ -4,7 +4,9 @@
   (:require [clojure.java.io :as io]
             [clojure.edn :as edn]
             [clojure.string :as str]
-            [clojure.set :as set]))
+            [clojure.set :as set]
+            [clojure.data.json :as json]))
+
 
 (def parser (HumanNameParser.))
 
@@ -47,3 +49,5 @@
                   acc)))
             []
             matches)))
+
+(def example (json/read-str (slurp (io/resource "so.json"))))
