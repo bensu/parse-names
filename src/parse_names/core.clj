@@ -27,7 +27,7 @@
 
 (def name-regex #"[A-Z]{1}[a-z]+\s[A-Z]{1}[a-z]+")
 
-(defn read-names
+(defn read-words
   "Helper to parse names of a text file assuming they come line-separated"
   [file-str]
   (with-open [rdr (io/reader file-str)]
@@ -50,4 +50,9 @@
             []
             matches)))
 
-(def example (json/read-str (slurp (io/resource "so.json"))))
+;; When jQuery is present you can extract all text like this:
+;; var acc = [];
+;; $(":visible").each(function() { var txt = $(this).text(); if (txt !== "") { acc.push(txt); } });
+;; JSON.stringify(acc);
+
+(def example (json/read-str (slurp (io/resource "twitter.json"))))
