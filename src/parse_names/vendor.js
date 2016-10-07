@@ -26,6 +26,7 @@ parse_names.vendor.is_camel_case = function (word) {
 
 // single letter, possibly followed by a period
 parse_names.vendor.is_initial = function (word) {
+    if (!word) { return false; }
     word = parse_names.vendor.removeIgnoredChars(word);
     return (word.length === 1);
 };
