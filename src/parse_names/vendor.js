@@ -162,10 +162,10 @@ parse_names.vendor.parse = function (fullastName) {
     }
     // return the various parts in an array
     return {
-	salutation: salutation || "",
-	firstName: firstName.trim(),
-	initials: initials.trim(),
-	lastName: lastName.trim(),
-	suffix: suffix || ""
+	"salutation": salutation || "",
+	"firstName": firstName.trim(),
+	"initials": initials.trim(),
+	"lastName": lastName.trim(),
+	"suffix": suffix || ""
     };
 };
