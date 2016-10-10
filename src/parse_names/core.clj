@@ -8,10 +8,10 @@
             [clojure.data.json :as json]))
 
 
-(def parser (HumanNameParser.))
+(def parser (delay (HumanNameParser.)))
 
 (defn parse-name [s]
-  (let [name-obj (.parse parser s)]
+  (let [name-obj (.parse @parser s)]
     (->> {:first-name (.getFirstName name-obj)
           :last-name (.getLastName name-obj)
           :leading-initial (.getLeadingInitial name-obj)
@@ -55,4 +55,4 @@
 ;; $(":visible").each(function() { var txt = $(this).text(); if (txt !== "") { acc.push(txt); } });
 ;; JSON.stringify(acc);
 
-(def example (json/read-str (slurp (io/resource "twitter.json"))))
+(def example (delay (json/read-str (slurp (io/resource "twitter.json")))))
