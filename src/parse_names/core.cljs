@@ -3,10 +3,10 @@
 
 (defn parse-name [name]
   (let [name-obj (v/parse name)]
-    (->> {:first-name (.-firstName name-obj)
-          :last-name (.-lastName name-obj)
-          :salutation (.-salutation name-obj)
-          :suffix (.-suffix name-obj)
-          :initials (.-initials name-obj)}
+    (->> {:first-name (aget name-obj "firstName")
+          :last-name (aget name-obj "lastName")
+          :salutation (aget name-obj "salutation")
+          :suffix (aget name-obj "suffix")
+          :initials (aget name-obj "initials")}
          (filter (fn [[k v]] (not (empty? v))))
          (into {}))))
