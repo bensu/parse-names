@@ -6,6 +6,9 @@ and the [JavaScript Name Parser](https://github.com/joshfraser/JavaScript-Name-P
 
 **WARNING: The Clojure and ClojureScript behavior are different, see
   the examples for more info**
+  
+## Clojars Link
+https://clojars.org/parse-names
 
 ## Usage from Clojure
 
